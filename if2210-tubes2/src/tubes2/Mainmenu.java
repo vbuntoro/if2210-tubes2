@@ -14,8 +14,8 @@ import java.awt.event.*;
  */
 class Mainmenu extends JFrame
 {
-	private static final int BUTTON_LOCATION_X = 200;  // location x 
-	private static final int BUTTON_LOCATION_Y = 50;   // location y 
+	private static final int BUTTON_LOCATION_X = 0;  // location x 
+	private static final int BUTTON_LOCATION_Y = 0;   // location y 
 	private static final int BUTTON_SIZE_X = 140;      // size height
 	private static final int BUTTON_SIZE_Y = 50;       // size width
 	/**
