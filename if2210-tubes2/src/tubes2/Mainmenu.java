@@ -13,6 +13,7 @@ import java.awt.event.*;
  */
 class Mainmenu extends JFrame
 {
+	
 	/**
 	 * Instantiates a new mainmenu.
 	 */
