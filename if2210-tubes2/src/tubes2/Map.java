@@ -1,10 +1,23 @@
+/*
+ * 
+ */
 package tubes2;
 
+// TODO: Javadoc for Map class
+/**
+ * The Class Map.
+ */
 public class Map {
 	/* Atribut kelas */
+	/** The Level. */
 	private int Level;
+	
+	/** The p. */
 	private Path[][] P;
 	/* Konstruktor */
+	/**
+	 * Instantiates a new map.
+	 */
 	public Map() {
 		/* Deklarasi array 2 dimensi */
 		P = new Path[8][];
@@ -18,7 +31,14 @@ public class Map {
 		Level = 1;
 		randomMap();
 	}
-	/* Melakukan validasi, 1 adalah depan, 2 adalah belakang, 3 adalah kiri, 4 adalah kanan */
+	/**
+	 * Checks if is path valid.
+	 *
+	 * @param arah the arah
+	 * @param i the row index
+	 * @param j the column index
+	 * @return true, if is path valid
+	 */
 	public boolean isPathValid(int arah, int i, int j) {
 		/* Melakukan validasi terhadap arah yang dipencet player terhadap map */
 		boolean x = false;
@@ -30,16 +50,28 @@ public class Map {
 		}
 		return x;
 	}
+	
+	/**
+	 * Increase map level.
+	 */
 	public void increaseMapLevel() {
 		/* Menambahkan level map dan melakuka random map */
 		Level++;
 		randomMap();
 	}
+	
+	/**
+	 * Gets the map level.
+	 *
+	 * @return the map level
+	 */
 	public int getMapLevel() {
 		/* Mengembalikan level map */
 		return Level;
 	}
-	/* Randomizer map */
+	/**
+	 * Random map.
+	 */
 	public void randomMap() {
 		/* Melakukan random map dengan 3 pattern
 		 * Setiap pattern map memiliki perbedaan arah dan goal
@@ -73,7 +105,11 @@ public class Map {
 		}
 		
 	}
-	/* Main */
+	/**
+	 * The main program.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String args[]) {
 		Map M = new Map();
 		M.randomMap();
