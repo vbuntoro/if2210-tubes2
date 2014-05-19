@@ -29,6 +29,7 @@ public class Map {
 		}
 		/* Inisialisasi level 1 */
 		Level = 1;
+		P[0][3].setGoal(true); P[6][2].setStart(true);
 		randomMap();
 	}
 	/**
@@ -43,10 +44,10 @@ public class Map {
 		/* Melakukan validasi terhadap arah yang dipencet player terhadap map */
 		boolean x = false;
 		switch(arah) {
-			case 1: x = P[i][j].getFront(); break;
-			case 2: x = P[i][j].getBack(); break;
-			case 3: x = P[i][j].getLeft(); break;
-			case 4: x = P[i][j].getRight(); break;
+			case 1: x = P[i][j].getAtas(); break;
+			case 2: x = P[i][j].getBawah(); break;
+			case 3: x = P[i][j].getKiri(); break;
+			case 4: x = P[i][j].getKanan(); break;
 		}
 		return x;
 	}
@@ -76,31 +77,29 @@ public class Map {
 		/* Melakukan random map dengan 3 pattern
 		 * Setiap pattern map memiliki perbedaan arah dan goal
 		 */
-		/* clear bekas map sebelumnay */
-		P[0][5].setGoal(false); P[0][2].setGoal(false);
-		P[6][2].setStart(false); P[6][3].setStart(false);
 		/* random map */
 		int x = (int)(Math.random() * 2) + 1; //random 1-2
 		switch (x) {
-			case 1: P[0][3].setPath(8); P[0][5].setPath(4); P[0][5].setGoal(true);
-					P[1][3].setPath(4); P[1][4].setPath(8); P[1][5].setPath(4); P[1][6].setPath(8);
-					P[2][2].setPath(8); P[2][3].setPath(5); P[2][4].setPath(1); P[2][5].setPath(3); P[2][6].setPath(2);
-					P[3][1].setPath(8); P[3][2].setPath(8); P[3][4].setPath(4); P[3][6].setPath(4);
-					P[4][1].setPath(7); P[4][2].setPath(1); P[4][3].setPath(4); P[4][4].setPath(3); P[4][5].setPath(4);
-										P[4][6].setPath(2);
-					P[5][2].setPath(4); P[5][4].setPath(2); P[5][5].setPath(4); P[5][6].setPath(6);
-					P[6][2].setPath(4); P[6][2].setStart(true); P[6][4].setPath(8);
+			case 1: P[0][3].setPath(7); P[0][4].setPath(11); P[0][6].setPath(9);
+					P[1][4].setPath(2); P[1][5].setPath(9); P[1][6].setPath(2);
+					P[2][3].setPath(14); P[2][4].setPath(8); P[2][5].setPath(5); P[2][6].setPath(6);
+					P[3][3].setPath(9); P[3][5].setPath(2);
+					P[4][2].setPath(14); P[4][3].setPath(5); P[4][4].setPath(15); P[4][5].setPath(8);
+										P[4][6].setPath(11);
+					P[5][3].setPath(2); P[5][5].setPath(10); P[5][6].setPath(6);
+					P[6][0].setPath(14); P[6][1].setPath(15); P[6][2].setPath(15); P[6][3].setPath(6);
+										P[6][5].setPath(1);
 					break;
-			case 2: P[0][1].setPath(8); P[0][2].setPath(4); P[0][2].setGoal(true); P[0][5].setPath(8); P[0][6].setPath(8);
-					P[1][1].setPath(4); P[1][2].setPath(4); P[1][3].setPath(8); P[1][4].setPath(7); P[1][5].setPath(3);
-										P[1][6].setPath(8);
-					P[2][0].setPath(8); P[2][1].setPath(1); P[2][2].setPath(3); P[2][3].setPath(3); P[2][4].setPath(4);
-										P[2][6].setPath(4);
-					P[3][1].setPath(4); P[3][3].setPath(4); P[3][4].setPath(8); P[3][6].setPath(4);
-					P[4][1].setPath(4); P[4][3].setPath(4); P[4][5].setPath(7); P[4][6].setPath(5);
-					P[5][0].setPath(8); P[5][1].setPath(5); P[5][2].setPath(4); P[5][3].setPath(1); P[5][4].setPath(4);
-										P[5][5].setPath(7); P[5][6].setPath(2);
-					P[6][0].setPath(7); P[6][1].setPath(7); P[6][3].setPath(4); P[6][3].setStart(true); P[6][6].setPath(8);
+			case 2: P[0][2].setPath(9); P[0][3].setPath(2); P[0][6].setPath(9);
+					P[1][0].setPath(9); P[1][2].setPath(2); P[1][3].setPath(2); P[1][4].setPath(9); 
+										P[1][5].setPath(10); P[1][6].setPath(6);
+					P[2][0].setPath(4); P[2][1].setPath(15); P[2][2].setPath(5); P[2][3].setPath(7); 
+										P[2][4].setPath(3);	P[2][5].setPath(2);
+					P[3][0].setPath(2); P[3][2].setPath(2); P[3][4].setPath(2); P[3][5].setPath(1);
+					P[4][0].setPath(2); P[4][2].setPath(2); P[4][4].setPath(2); P[4][6].setPath(9);
+					P[5][0].setPath(7); P[5][1].setPath(11); P[5][2].setPath(7); P[5][3].setPath(15); 
+										P[5][4].setPath(5);	P[5][5].setPath(15); P[5][6].setPath(6);
+					P[6][1].setPath(7); P[6][2].setPath(6); P[6][4].setPath(1);
 					break;
 		}
 		

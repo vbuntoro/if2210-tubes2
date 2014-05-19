@@ -9,17 +9,17 @@ package tubes2;
  */
 public class Path {
 	/* Atribut kelas */
-	/** The Front. */
-	private boolean Front; //apabila ada jalan kedepan
+	/** The Atas. */
+	private boolean Atas; //apabila ada jalan kedepan
 	
-	/** The Back. */
-	private boolean Back; //apabila ada jalan kebelakang
+	/** The Bawah. */
+	private boolean Bawah; //apabila ada jalan kebelakang
 	
-	/** The Left. */
-	private boolean Left; //apabila ada jalan kekiri
+	/** The Kiri. */
+	private boolean Kiri; //apabila ada jalan kekiri
 	
-	/** The Right. */
-	private boolean Right; //apabila ada jalan kekanan
+	/** The Kanan. */
+	private boolean Kanan; //apabila ada jalan kekanan
 	
 	/** The Goal. */
 	private boolean Goal; //apabila merupakan goal
@@ -27,17 +27,15 @@ public class Path {
 	/** The Start. */
 	private boolean Start; //apabila merupakan start
 	
-	/** The Facing. */
-	private int Facing; //mengubah value facing yang merupakan sebuah permasalah pada FPS
 	/* Konstruktor dan Konstruktor parameter */
 	/**
 	 * Instantiates a new path.
 	 */
 	public Path() { 
-		Front = false;
-		Back = false;
-		Left = false;
-		Right = false;
+		Atas = false;
+		Bawah = false;
+		Kiri = false;
+		Kanan = false;
 		Goal = false;
 		Start = false;
 	}
@@ -49,14 +47,21 @@ public class Path {
 	 */
 	public void setPath (int a) {
 		switch (a) {
-			case 1: Front = true; Back = true; Left = true; Right = true; break;
-			case 2: Front = true; Back = true; Left = true; Right = false; break;
-			case 3: Front = true; Back = true; Left = false; Right = true; break;
-			case 4: Front = true; Back = true; Left = false; Right = false; break;
-			case 5: Front = false; Back = true; Left = true; Right = true; break;
-			case 6: Front = false; Back = true; Left = true; Right = false; break;
-			case 7: Front = false; Back = true; Left = false; Right = true; break;
-			case 8: Front = false; Back = true; Left = false; Right = false; break;
+			case 1: Atas = true; Bawah = false; Kiri = false; Kanan = false; break;
+			case 2: Atas = true; Bawah = true; Kiri = false; Kanan = false; break;
+			case 3: Atas = true; Bawah = true; Kiri = true; Kanan = false; break;
+			case 4: Atas = true; Bawah = true; Kiri = false; Kanan = true; break;
+			case 5: Atas = true; Bawah = true; Kiri = true; Kanan = true; break;
+			case 6: Atas = true; Bawah = false; Kiri = true; Kanan = false; break;
+			case 7: Atas = true; Bawah = false; Kiri = false; Kanan = true; break;
+			case 8: Atas = true; Bawah = false; Kiri = true; Kanan = true; break;
+			case 9: Atas = false; Bawah = true;	 Kiri = false; Kanan = false; break;
+			case 10: Atas = false; Bawah = true; Kiri = false; Kanan = true; break;
+			case 11: Atas = false; Bawah = true; Kiri = true; Kanan = false; break;
+			case 12: Atas = false; Bawah = true; Kiri = true; Kanan = true; break;
+			case 13: Atas = false; Bawah = false; Kiri = true; Kanan = false; break;
+			case 14: Atas = false; Bawah = false; Kiri = false; Kanan = true; break;
+			case 15: Atas = false; Bawah = false; Kiri = true; Kanan = true; break;
 		}
 	}
 	
@@ -75,53 +80,45 @@ public class Path {
 	 * @param a the new start
 	 */
 	public void setStart(boolean a) {
-		Back = false;
+		Bawah = false;
 		Start = a;
 	}
 	
-	/**
-	 * Sets the facing.
-	 *
-	 * @param a the new facing
-	 */
-	public void setFacing(int a) {
-		Facing = a;
-	}
 	/* Getter */
 	/**
-	 * Gets the front.
+	 * Gets the Atas.
 	 *
-	 * @return the front
+	 * @return the Atas
 	 */
-	public boolean getFront() {
-		return Front;
+	public boolean getAtas() {
+		return Atas;
 	}
 	
 	/**
-	 * Gets the back.
+	 * Gets the Bawah.
 	 *
-	 * @return the back
+	 * @return the Bawah
 	 */
-	public boolean getBack() {
-		return Back;
+	public boolean getBawah() {
+		return Bawah;
 	}
 	
 	/**
-	 * Gets the left.
+	 * Gets the Kiri.
 	 *
-	 * @return the left
+	 * @return the Kiri
 	 */
-	public boolean getLeft() {
-		return Left;
+	public boolean getKiri() {
+		return Kiri;
 	}
 	
 	/**
-	 * Gets the right.
+	 * Gets the Kanan.
 	 *
-	 * @return the right
+	 * @return the Kanan
 	 */
-	public boolean getRight() {
-		return Right;
+	public boolean getKanan() {
+		return Kanan;
 	}
 	
 	/**
@@ -140,14 +137,5 @@ public class Path {
 	 */
 	public boolean getStart() {
 		return Start;
-	}
-	
-	/**
-	 * Gets the facing.
-	 *
-	 * @return the facing
-	 */
-	public int getFacing() {
-		return Facing;
 	}
 }
