@@ -22,7 +22,7 @@ class Mainmenu extends JFrame
 		add(l1);
 		add(b1);
 		// Just for refresh :) Not optional!
-		setSize(596,380);
+		setSize(800,600);
 		}
 		public static void main(String args[])
 		{
